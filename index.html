@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Wisata Paralayang Gunung Banyak</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body class="bg-sky-50">
+
+    <!-- HEADER -->
+    <header class="w-full bg-gradient-to-r from-sky-500 to-blue-600 shadow-lg">
+        <nav class="max-w-5xl mx-auto px-4 py-5 flex items-center gap-4">
+            <div class="w-12 h-12 bg-white rounded-full flex items-center justify-center shadow text-3xl">
+                🪂
+            </div>
+            <div>
+                <h1 class="text-white text-2xl font-bold">
+                    Wisata Paralayang Gunung Banyak
+                </h1>
+                <p class="text-sky-100 text-sm">
+                    Saksikan Keindahan Kota Batu dari Ketinggian. Mulai Petualanganmu Sekarang!
+                </p>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="relative w-full">
+        <img src="https://getlost.id/wp-content/uploads/2023/06/panderman_1429912640.jpg" class="w-full h-100 object-cover" />
+        <div class="absolute bottom-0 w-full h-20 bg-gradient-to-b from-transparent to-white"></div>
+    </section>
+
+    <!-- INFO -->
+    <section class="bg-white py-12">
+        <div class="max-w-4xl mx-auto text-center px-6">
+            <h2 class="text-3xl font-bold text-slate-900 mb-4">
+                Sekilas Tentang Wisata Paralayang Gunung Banyak
+            </h2>
+            <p class="text-slate-700 text-lg leading-relaxed">
+                Wisata Paralayang Gunung Banyak di Kota Batu adalah destinasi olahraga dirgantara utama di Jawa Timur, terkenal karena landasan take-off yang berada di ketinggian sekitar 1.315 Mdpl, ideal untuk penerbangan tandem yang didampingi pilot berlisensi. Selain menawarkan sensasi terbang bebas dengan pemandangan panorama Kota Batu yang spektakuler, kawasan ini juga menjadi lokasi kompetisi paralayang nasional dan internasional. Keberhasilan penerbangan sangat bergantung pada kondisi cuaca dan angin yang stabil, sehingga lokasi ini juga dilengkapi dengan daya tarik pendukung seperti Omah Kayu dan Taman Langit untuk pengunjung yang ingin menikmati keindahan alam dan city light dari ketinggian.
+            </p>
+        </div>
+    </section>
+
+    <!-- KALENDER + JAM -->
+    <section class="py-16 bg-gradient-to-b from-sky-50 via-blue-100 to-purple-100">
+        <div class="max-w-6xl mx-auto px-6">
+
+            <h2 class="text-center text-3xl font-bold mb-4">
+                Kapan Mau Main ke Gunung Banyak?
+            </h2>
+            <p id="selected-date" class="text-center font-semibold mb-3">
+                        Pilih tanggal pada kalender.
+                    </p>
+
+            <div class="mobile-two-col grid md:grid-cols-2 gap-10">
+
+                <!-- Kalender (scroll di HP) -->
+                <div>
+                    <div id="calendar-grid" class="calendar-scroll p-6 bg-white rounded-xl shadow scrollbar-hide">
+                    </div>
+                </div>
+
+                <!-- Grafik Jam (scroll di HP) -->
+                <!-- Grafik Jam (scroll di HP) -->
+                <div id="graph-box"
+                    class="hidden p-6 bg-white rounded-xl shadow flex flex-col mobile-graph-box">
+
+                    
+
+                    <!-- Legend Warna -->
+                    <div class="flex items-center gap-6 mt-4 text-sm">
+
+                        <div class="flex items-center gap-2">
+                            <div class="w-4 h-4 rounded bg-green-500"></div>
+                            <span>Aman untuk paralayang</span>
+                        </div>
+
+                        <div class="flex items-center gap-2">
+                            <div class="w-4 h-4 rounded bg-yellow-400"></div>
+                            <span>Berpotensi tidak bisa paralayang</span>
+                        </div>
+
+                        <div class="flex items-center gap-2">
+                            <div class="w-4 h-4 rounded bg-red-500"></div>
+                            <span>Tidak bisa paralayang</span>
+                        </div>
+
+                    </div>
+
+                    <div id="hour-bars" class="hour-scroll flex flex-col gap-2 mt-3 scrollbar-hide"></div>
+
+                    <p class="text-xs text-slate-600 mt-3">
+                        Berdasarkan analisis fuzzy probabilistik dan API cuaca Open-Meteo
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FASILITAS (carousel di HP, grid di desktop) -->
+    <section class="max-w-6xl mx-auto px-6 mt-14 mb-16">
+        <h2 class="text-3xl font-bold text-slate-900 text-center mb-8">
+            Di Gunung Banyak Ada :
+        </h2>
+
+        <div class="facility-wrapper scrollbar-hide">
+
+            <!-- Card 1 -->
+            <div class="carousel-item bg-white shadow-lg rounded-2xl overflow-hidden hover:shadow-xl transition group">
+                <img src="https://salsawisata.com/wp-content/uploads/2022/11/patung-Taman-Langit-Gunung-Banyak-600x338.jpg"
+                    class="w-full h-56 object-cover group-hover:scale-105 transition" />
+                <div class="p-5">
+                    <h3 class="font-bold text-lg text-slate-800 mb-2">Taman Langit</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Banyak spot foto yang siap jadi latar foto kerenmu.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="carousel-item bg-white shadow-lg rounded-2xl overflow-hidden hover:shadow-xl transition group">
+                <img src="assets/fasilitas_1.jpg" class="w-full h-56 object-cover group-hover:scale-105 transition" />
+                <div class="p-5">
+                    <h3 class="font-bold text-lg text-slate-800 mb-2">Banyak Penjual</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Banyak cafe dan warung yang siap mengisi energimu.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="carousel-item bg-white shadow-lg rounded-2xl overflow-hidden hover:shadow-xl transition group">
+                <img src="assets/hero.jpg"
+                    class="w-full h-56 object-cover group-hover:scale-105 transition" />
+                <div class="p-5">
+                    <h3 class="font-bold text-lg text-slate-800 mb-2">Pemandangan</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Spot pemandangan terbaik untuk melihat paralayang.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="carousel-item bg-white shadow-lg rounded-2xl overflow-hidden hover:shadow-xl transition group">
+                <img src="assets/fasilitas_2.jpg"
+                    class="w-full h-56 object-cover group-hover:scale-105 transition" />
+                <div class="p-5">
+                    <h3 class="font-bold text-lg text-slate-800 mb-2">Tempat Parkir Luas dan Mushola</h3>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Tidak akan kesulitan mencari - cari
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SCRIPT -->
+    <script src="js/fuzzy.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,175 @@
+body {
+    font-family: Inter, sans-serif;
+}
+/* ================================
+   GLOBAL
+=================================== */
+#calendar-grid {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+/* Hilangkan scrollbar (Chrome, Safari, Edge) */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hilangkan scrollbar (Firefox) */
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Container carousel HP */
+.carousel-container {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    padding-left: .5rem;
+    padding-right: .5rem;
+}
+
+/* Item carousel */
+.carousel-item {
+    flex: 0 0 auto;
+    min-width: 260px;
+}
+
+/* Kalender scroll di mobile */
+.calendar-scroll {
+    overflow-x: auto;
+    width: max-content;
+}
+
+.hour-scroll {
+    overflow-x: auto;
+    width: max-content;
+}
+
+/* ================================
+   RESPONSIVE BREAKPOINTS
+=================================== */
+
+/* HP (≤ 640px) */
+@media (max-width: 640px) {
+
+    /* Kalender full scroll */
+    #calendar-grid {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+    /* Grafik scroll */
+    #hour-bars {
+        width: max-content !important;
+    }
+
+    /* Setiap bar jam */
+    #hour-bars > div {
+        min-width: 300px;
+    }
+
+    /* Fasilitas menjadi carousel */
+    .facility-wrapper {
+        display: flex !important;
+        overflow-x: auto;
+        gap: 1.5rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .facility-wrapper > div {
+        min-width: 260px;
+    }
+}
+
+/* Tablet (641px – 1024px) */
+@media (min-width: 641px) and (max-width: 1024px) {
+
+    /* Kalender tetap kiri-kanan tetapi tidak terlalu kecil */
+    #calendar-grid {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+    #hour-bars {
+        width: 100%;
+    }
+
+    /* Fasilitas jadi grid 2 kolom */
+    .facility-wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        overflow: hidden;
+        padding: 0;
+    }
+}
+
+/* Desktop (≥ 1025px) */
+@media (min-width: 1025px) {
+    .facility-wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+}
+
+/* ================================
+   MOBILE DYNAMIC LAYOUT
+   Kalender & Grafik Side-by-Side
+=================================== */
+
+@media (max-width: 640px) {
+
+    /* Default: kalender full width, grafik hidden */
+    .mobile-two-col {
+        display: block;
+    }
+
+    /* Setelah pilih tanggal → dua kolom side-by-side */
+    .mobile-two-col.active {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+    }
+
+    /* Kalender & grafik ukuran mini agar muat berdampingan */
+    .mobile-two-col.active #calendar-grid {
+        width: 100% !important;
+        max-width: 100%;
+    }
+
+    .mobile-two-col.active #hour-bars {
+        width: 100% !important;
+        max-width: 100%;
+    }
+
+    /* Grafik diberi border agar rapi */
+    .mobile-two-col.active .mobile-graph-box {
+        border-radius: 0.75rem;
+        overflow: hidden;
+    }
+
+}
+.fade-in {
+    animation: fade .4s ease-out forwards;
+}
+
+@keyframes fade {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 640px) {
+    /* Kalender berada tepat di tengah sebelum pilih tanggal */
+    .mobile-two-col:not(.active) {
+        display: flex;
+        justify-content: center;
+    }
+}
